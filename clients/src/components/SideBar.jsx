@@ -19,13 +19,21 @@ export default function SideBar() {
   return (
     <div className="sidebar">
       <ul>
-        <li>
-          <i className="fa fa-plus"></i>
-          <Link className="cat" to={"/admin/addCategory"}>
-            Ajouter Categorie
+      <li>
+          <Link className="cat" to={"/admin/categories"}>
+            Categories
           </Link>
-          /
-          <Link className="cat" to={"/admin/addProduct"}>
+        </li>
+        <hr />
+        <li>
+          <Link className="cat" to={"/admin/products"}>
+            Produits
+          </Link>
+        </li>
+        <hr />
+        <li>
+        <i className="fa fa-plus"></i>
+        <Link className="cat" to={"/admin/addProduct"}>
             Ajouter Produit
           </Link>
         </li>
