@@ -20,6 +20,8 @@ import Commande from "./AdminPages/Commande";
 import Client from "./AdminPages/Client";
 import ProductBySousCategory from "./pages/ProductBySousCategory";
 import SearchResult from "./pages/SearchResult";
+import Categories from "./AdminPages/Categories.jsx";
+import Products from "./AdminPages/Products.jsx";
 
 export default function App() {
   const UserId = localStorage.getItem("userId");
@@ -56,7 +58,9 @@ export default function App() {
           path="/admin/productByCategory/:SousCategoryId"
           element={<ProductByCategory />}
         ></Route>
+        <Route path="/admin/categories" element={<Categories />}></Route>
         <Route path="/admin/addCategory" element={<AddCategory />}></Route>
+        <Route path="/admin/products" element={<Products />}></Route>
         <Route path="/admin/addProduct" element={<AddProduct />}></Route>
         <Route
           path="/admin/singleProduct/:id"
