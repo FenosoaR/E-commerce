@@ -3,6 +3,9 @@
     padding : 10px;
     width: 100%;
     box-shadow: 10px 5px 2px lightgray;
+    background-color: rgba(22, 22, 88, 0.527);
+    color: white;
+   
 }
 .nav-admin button{
     float: right;
@@ -17,12 +20,10 @@
 }
 .nav-admin .etsenadmin{
     font-size: 25px;
-    color: black;
     margin-left: 20px;
     font-weight: 600;
 }
 .nav-admin span{
-    color: black;
     font-weight: 600;
 }
 .notif{
@@ -296,6 +297,8 @@
     height: calc(100vh - 80px);
     padding-top: 10px;
     border-right: 1px solid lightgray;   
+    background-color: rgba(22, 22, 88, 0.527);
+    color: white;
 }
 .sidebar ul{
     list-style-type: none;
@@ -306,7 +309,7 @@
     
 }
 .cat{
-    color: rgb(78, 76, 76);
+    color: white;
     text-decoration: none;
     margin-left: 10px;
     font-weight : 600;
