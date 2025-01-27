@@ -13,7 +13,7 @@ export default function AddCategory() {
   const [success, setSuccess] = useState(null);
 
   const [sousCat, setSousCat] = useState({
-    name: "",
+    name: "", 
     CategoryId: "",
   });
 
@@ -89,70 +89,84 @@ export default function AddCategory() {
   }
 
   return (
-    <div>
+  
+
+
+<div className="container-fluid">
+  <div className="row">
+    <SideBar />
+    <div className="col-lg-10">
+      <div className="row">
       <NavAdmin />
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-lg-3">
-            <SideBar />
-          </div>
-          <div className="col-lg-9">
-            <h2 style={{marginTop : '10px'}}>Categories et Sous Categories</h2>
-            {success && (
-                <div className="alert alert-success">
-                  {success}
-                </div>
-              )}
-            <div className="row">      
-              <div className="col-lg-5">
-                <form action="" onSubmit={handleSubmit}>
-                  <div className="mb-3">
-                    <label htmlFor="name">Categorie : </label>
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      className="form-control"
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <button
-                      type="submit"
-                      className="btn btn-primary form-control"
-                    >
-                      Ajouter
-                    </button>
-                  </div>
-                </form>
-              </div>
-              <div className="col-lg-4">
-                <form action="" onSubmit={handleSousCategory}>
-                  <div className="mb-3">
-                    <label htmlFor="name">Sous Categorie : </label>
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      className="form-control"
-                      onChange={handleChangeSousCat}
-                    />
-                  </div>
-                  <div className="mb-3">{choixcategories}</div>
-                  <div className="mb-3">
-                    <button
-                      type="submit"
-                      className="btn btn-primary form-control"
-                    >
-                      Ajouter
-                    </button>
-                  </div>
-                </form>
-              </div>
+      </div>
+      
+      <div className="row">
+        <div className="col-lg-12">
+          <h2  style={{marginTop : '10px'}}>Gestion Categorie</h2>
+          {success && (
+            <div className="alert alert-success">
+              {success}
             </div>
+          )}
+          <div className="row">
+            <div className="col-lg-11">
+              <h4 style={{textAlign:'center'}}>Ajout categorie</h4>
+            <form action="" onSubmit={handleSubmit}>
+                   <div className="mb-3">
+                     <label htmlFor="name">Categorie : </label>
+                     <input
+                       type="text"
+                       name="name"
+                       id="name"
+                       className="form-control"
+                       onChange={handleChange}
+                     />
+                   </div>
+                   <div className="mb-3">
+                     <button
+                       type="submit"
+                       className="btn btn-primary form-control"
+                     >
+                       Ajouter
+                     </button>
+                   </div>
+          </form>
+            </div>
+          
+          </div>
+          <hr />
+
+          <div className="row">
+            <div className="col-lg-11">
+            <h4 style={{textAlign:'center'}}>Ajout sous-categorie</h4>
+            <form action="" onSubmit={handleSousCategory}>
+                   <div className="mb-3">
+                     <label htmlFor="name">Sous Categorie : </label>
+                     <input
+                       type="text"
+                       name="name"
+                       id="name"
+                       className="form-control"
+                       onChange={handleChangeSousCat}
+                     />
+                   </div>
+                   <div className="mb-3">{choixcategories}</div>
+                   <div className="mb-3">
+                     <button
+                       type="submit"
+                       className="btn btn-primary form-control"
+                     >
+                       Ajouter
+                     </button>
+                   </div>
+          </form>
+            </div>
+         
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
   );
 }
