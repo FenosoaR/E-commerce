@@ -91,102 +91,111 @@ export default function AddProduct() {
       .post("http://localhost:9000/api/admin/addProduct", formdata)
       .then((res) => {
         console.log(res.data)
-        navigate("/admin");
+        navigate("/admin/products");
       })
       .catch((er) => console.log(er));
   }
 
   return (
-    <div>
+<div className="container-fluid">
+  <div className="row">
+    <SideBar />
+    <div className="col-lg-10">
+      <div className="row">
       <NavAdmin />
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-lg-3">
-            <SideBar />
-          </div>
-          <div className="col-lg-9">
-            <form action="" onSubmit={handlesubmit}>
-              <div className="mb-3">
-                <label htmlFor="name">Produit : </label>
-                <input
-                  type="text"
-                  name="name"
-                  className="form-control"
-                  id="name"
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="desc">Description : </label>
-                <input
-                  type="text"
-                  name="desc"
-                  className="form-control"
-                  id="desc"
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="price">Price: </label>
-                <input
-                  type="text"
-                  name="price"
-                  className="form-control"
-                  id="price"
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="files">Image : </label>
-                <input
-                  type="file"
-                  name="files"
-                  className="form-control"
-                  id="files"
-                  multiple
-                  onChange={fileChange}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="color">Color : </label>
-                <input
-                  type="text"
-                  name="color"
-                  className="form-control"
-                  id="color"
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="size">Size : </label>
-                <input
-                  type="text"
-                  name="size"
-                  className="form-control"
-                  id="size"
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="tock">Stock : </label>
-                <input
-                  type="number"
-                  name="stock"
-                  className="form-control"
-                  id="stock"
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="mb-3">{selectCategory}</div>
-              <div className="mb-3">
-                <button type="submit" className="form-control btn btn-primary">
-                  Ajouter{" "}
-                </button>
-              </div>
-            </form>
+      </div>
+      
+      <div className="row">
+        <div className="col-lg-12">
+          <h2  style={{marginTop : '10px'}}>Ajout produit</h2>
+          <div className="row">
+            <div className="col-lg-11">
+             <form action="" onSubmit={handlesubmit}>
+               <div className="mb-3">
+                 <label htmlFor="name">Produit : </label>
+                 <input
+                   type="text"
+                   name="name"
+                   className="form-control"
+                   id="name"
+                   onChange={handleChange}
+                 />
+               </div>
+               <div className="mb-3">
+                 <label htmlFor="desc">Description : </label>
+                 <input
+                   type="text"
+                   name="desc"
+                   className="form-control"
+                   id="desc"
+                   onChange={handleChange}
+                 />
+               </div>
+               <div className="mb-3">
+                 <label htmlFor="price">Price: </label>
+                 <input
+                   type="text"
+                   name="price"
+                   className="form-control"
+                   id="price"
+                   onChange={handleChange}
+                 />
+               </div>
+               <div className="mb-3">
+                 <label htmlFor="files">Image : </label>
+                 <input
+                   type="file"
+                   name="files"
+                   className="form-control"
+                   id="files"
+                   multiple
+                   onChange={fileChange}
+                 />
+               </div>
+               <div className="mb-3">
+                 <label htmlFor="color">Color : </label>
+                 <input
+                   type="text"
+                   name="color"
+                   className="form-control"
+                   id="color"
+                   onChange={handleChange}
+                 />
+               </div>
+               <div className="mb-3">
+                 <label htmlFor="size">Size : </label>
+                 <input
+                   type="text"
+                   name="size"
+                   className="form-control"
+                   id="size"
+                   onChange={handleChange}
+                 />
+               </div>
+               <div className="mb-3">
+                 <label htmlFor="tock">Stock : </label>
+                 <input
+                   type="number"
+                   name="stock"
+                   className="form-control"
+                   id="stock"
+                   onChange={handleChange}
+                 />
+               </div>
+               <div className="mb-3">{selectCategory}</div>
+               <div className="mb-3">
+                 <button type="submit" className="form-control btn btn-primary">
+                   Ajouter{" "}
+                 </button>
+               </div>
+             </form>
+            </div>
+          
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
   );
 }
