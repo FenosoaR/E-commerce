@@ -52,10 +52,7 @@ export default function NavAdmin() {
   }
 
   return (
-    <div>
-      <div className="nav-admin">
-      <span className="etsenadmin">Admin.Etsena</span>
-
+      <div className="col-lg-12 g-0 nav-admin">
         {affichage}
         <i className="fa fa-bell-o notification" onClick={clickBell}></i>
         <div className="notif">
@@ -66,6 +63,5 @@ export default function NavAdmin() {
           ))}
         </div>
       </div>
-    </div>
   );
 }

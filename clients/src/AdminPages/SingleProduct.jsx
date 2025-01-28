@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import SideBar from "../components/SideBar";
+import { Link } from "react-router-dom";
 
 export default function SingleProduct() {
   const [product, setProduct] = useState({});
@@ -19,20 +20,30 @@ export default function SingleProduct() {
   }, [ProductId]);
 
   return (
-    <div>
+<div className="container-fluid">
+<div className="row">
+  <SideBar />
+    <div className="col-lg-10">
+      <div className="row">
       <NavAdmin />
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-lg-3">
-            <SideBar />
-          </div>
-          <div className="col-lg-9">
-            <h3>{product.name}</h3>
-            <p>{product.desc}</p>
-            <span>Prix : {product.price} Ar</span> <br />
-            <span>Produit en stock : {product.stock} </span> <br />
-            <span>Couleur disponible : {product.color} </span>
-            <div className="row">
+      </div>
+      
+      <div className="row">
+        <div className="col-lg-12">
+          <h2 style={{marginTop : '10px'}}>Page Produit</h2>
+        </div>
+      </div>
+      <hr />
+
+      <div className="row">
+        <div className="col-lg-12">
+             <b>Produit : </b><span>{product.name}</span> <br />
+             <b>Description : </b><span>{product.desc}</span><br />
+             <b>Prix : </b><span>{product.price} Ar</span> <br />
+             <b>Stock : </b><span>{product.stock}</span> <br />
+             <b>Couleur disponible : </b><span>{product.color}</span>
+             <hr />
+             <div className="row">
               <div className="col">
                 <div className="product_photo">
                   <img
@@ -58,9 +69,16 @@ export default function SingleProduct() {
                 </div>
               </div>
             </div>
-          </div>
+        
         </div>
+     
       </div>
+
+
+
+
     </div>
+</div>
+</div>
   );
 }
