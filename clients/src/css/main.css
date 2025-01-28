@@ -1,16 +1,20 @@
+
+body{
+background-color: rgb(242, 242, 242) !important;
+}
 .nav-admin{
-    height :60px;
-    padding : 10px;
     width: 100%;
-    box-shadow: 10px 5px 2px lightgray;
-    background-color: rgba(22, 22, 88, 0.527);
+    height :60px;
+    /* padding : 10px; */
     color: white;
+    background-color: white;
    
 }
 .nav-admin button{
     float: right;
     background-color: rgba(22, 22, 88, 0.527);
     color: white;
+    margin-top: 10px;
 }
 .nav-admin i{
     float: right;
@@ -25,6 +29,12 @@
 }
 .nav-admin span{
     font-weight: 600;
+}
+.ml-2{
+    margin-left: 20px;
+}
+.logout{
+    margin-right: 20px;
 }
 .notif{
     width : 250px;
@@ -287,24 +297,28 @@
 .auth button{
     font-weight: 600;
     color:white;
-    background-color: rgba(22, 22, 88, 0.527);
+    background-color: rgba(5, 5, 92, 0.527);
     /* background:linear-gradient(90deg,rgba(167, 123, 123, 0.671),rgba(183, 211, 223, 0.733),rgba(176, 176, 192, 0.808));  ; */
 }
+
 .inscrire{
    text-align: center;  
 }
 .sidebar{
-    height: calc(100vh - 80px);
-    padding-top: 10px;
-    border-right: 1px solid lightgray;   
-    background-color: rgba(22, 22, 88, 0.527);
+    /* height: calc(100vh - 80px); */
+    /* padding-top: 10px; */
+    /* border-right: 1px solid lightgray;    */
+    background-color: rgb(87 87 167);
     color: white;
+}
+.bg-color {
+    background-color: rgb(87 87 167);
 }
 .sidebar ul{
     list-style-type: none;
 }
 .sidebar ul li{
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     font-size: 17px;  
     
 }

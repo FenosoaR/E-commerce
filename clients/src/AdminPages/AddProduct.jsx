@@ -184,7 +184,7 @@ export default function AddProduct() {
                </div>
                <div className="mb-3">{selectCategory}</div>
                <div className="mb-3">
-                 <button type="submit" className="form-control btn btn-primary">
+                 <button type="submit" className="form-control btn btn-primary bg-color">
                    Ajouter{" "}
                  </button>
                </div>

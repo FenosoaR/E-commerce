@@ -30,13 +30,15 @@ export default function Products(){
     useEffect(()=>{
         axios.get('http://localhost:9000/api/admin')
         .then((res) =>{
-
+          console.log(res.data.products);
+          
             let products = res.data.products
 
 
             let tableProducts = products.map((value, index) => {
                 return (
                   <tr key={value.id}>
+                    <td>{value.SousCategory.Category.name}</td>
                     <td>{value.SousCategory.name}</td>
                     <td>{value.name}</td>
                     <td>{value.price}</td>
@@ -48,6 +50,13 @@ export default function Products(){
                       >
                         <i className="fa fa-trash"></i>
                       </button>
+                      <Link
+                      to={`/admin/singleProduct/${value.id}`}
+                      className="btn btn-primary"
+                      style={{ marginLeft: "15px" }}
+                    >
+                      <i className="fa fa-eye"></i>
+                    </Link>
                     </td>
                   </tr>
                 );
@@ -83,6 +92,7 @@ export default function Products(){
                 <table className="table" >
                     <thead>
                         <tr>
+                          <th>Categorie</th>
                           <th>Sous-categorie</th>
                           <th>Produit</th>
                             <th>Prix</th>

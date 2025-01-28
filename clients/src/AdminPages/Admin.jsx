@@ -102,14 +102,13 @@ export default function Admin() {
 
   return (
     <div>
-      <NavAdmin />
+     
       <div className="container-fluid">
         <div className="row">
-          <div className="col-lg-3">
             <SideBar />
-          </div>
-          <div className="col-lg-9">
+          <div className="col-lg-10">
             <div className="row">
+              <NavAdmin/>
               {success && (
                 <div className="alert alert-success">
                   {success}
