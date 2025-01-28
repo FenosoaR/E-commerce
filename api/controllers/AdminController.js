@@ -15,10 +15,20 @@ Product.belongsTo(SousCategory)
 const adminHome = async (req, res) => {
   try {
     const categories = await Category.findAll({include : SousCategory});
-    const products = await Product.findAll({include :  SousCategory});
-    const sousCategory = await SousCategory.findAll({include : Category})
-    
-    return res.status(200).json({ message: "Homepage", products, categories , sousCategory});
+    // const products = await Product.findAll({include : SousCategory,} );
+    const sousCategories = await SousCategory.findAll({include : Category})
+
+    const products = await Product.findAll({
+      include: [
+        {
+          model: SousCategory,
+          include: [Category], // Inclure les catégories via la sous-catégorie
+        },
+      ],
+    });
+
+
+    return res.status(200).json({ message: "Homepage", products, categories , sousCategories});
 
   } catch (error) {
  
@@ -103,6 +113,27 @@ const addSousCategory = async(req , res)  => {
     return res.status(500).json(error);
   }
 }
+
+const removeSousCategory = async (req, res) => {
+
+  try {
+
+    const products = await Product.findAll();
+
+    for( const product of products){
+      await product.destroy({where : {SousCategoryId : req.params.id}})
+    }
+    await SousCategory.destroy({ where: { id: req.params.id } });
+
+
+
+    return res.status(200).json({ message: "Sous Categorie effacé avec succès" });
+  } catch (error) {
+  
+    return res.status(500).json(error);
+  }
+};
+
 
 const addProduct = async (req, res) => {
   const { SousCategoryId, name, price, desc, color, stock, size } = req.body;
@@ -245,12 +276,15 @@ const getOneProduct = async (req, res) => {
 };
 
 const getProductByCategory = async (req, res) => {
+
   const SousCategoryId = req.params.SousCategoryId;
 
   try {
+
     const products = await Product.findAll({
       where: { SousCategoryId },
     });
+
     const souscategory = await SousCategory.findOne({ where: { id:SousCategoryId } , include : Category });
 
     return res
@@ -328,6 +362,7 @@ module.exports = {
   removeCategory,
   updateCategory,
   addSousCategory,
+  removeSousCategory,
   addProduct,
   removeProduct,
   updateProduct,
