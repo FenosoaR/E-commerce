@@ -16,6 +16,7 @@ const {
   addSousCategory,
   valideCommande,
   livraisonEffectue,
+  removeSousCategory,
 } = require("../controllers/AdminController");
 
 const router = express.Router();
@@ -28,6 +29,7 @@ router.delete("/removeCategory/:id", removeCategory);
 router.patch("/updateCategory/:id", updateCategory);
 
 router.post('/addSousCategory' , addSousCategory)
+router.delete('/removeSousCategory/:id' , removeSousCategory)
 
 router.post("/addProduct", addProduct);
 router.delete("/removeProduct/:id", removeProduct);
