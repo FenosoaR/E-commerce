@@ -85,39 +85,44 @@ export default function Commande() {
   }, [refresh]);
 
  
- 
-
- 
 
   return (
-    <div>
-      <NavAdmin />
-      <div className="container-fluid">
+   
+    <div className="container-fluid">
+    <div className="row">
+      <SideBar />
+      <div className="col-lg-10">
         <div className="row">
-          <div className="col-lg-3">
-            <SideBar />
-          </div>
-          <div className="col-lg-9">
-            <h3 style={{ marginTop: "20px" }}>Liste de tous commandes</h3>
+        <NavAdmin />
+        </div>
+        
+        <div className="row">
+          <div className="col-lg-12">
+            <h2  style={{marginTop : '10px'}}>Commandes</h2>
+
+          
             <table className="table">
-              <thead>
-                <tr>
-                  <th>Client</th>
-                  <th>Produit</th>
-                  <th>Date de commande</th>
-                  <th>Date de livraison</th>
-                  <th>Addresse</th>
-                  <th>Statut</th>
-                  <th>Options</th>
-                </tr>
-              </thead>
-              <tbody>
-               {commande}
-              </tbody>
-            </table>
-          </div>
+               <thead>
+                 <tr>
+                   <th>Client</th>
+                   <th>Produit</th>
+                   <th>Date de commande</th>
+                   <th>Date de livraison</th>
+                   <th>Addresse</th>
+                   <th>Statut</th>
+                   <th>Options</th>
+                 </tr>
+               </thead>
+               <tbody>
+                {commande}
+               </tbody>
+             </table>
+            </div>
+            
+         
         </div>
       </div>
     </div>
+  </div>
   );
 }
