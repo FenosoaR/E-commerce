@@ -18,24 +18,27 @@ export default function SideBar() {
         </li>
 
       <li>
+        <i className="fa fa-folder"></i>
           <Link className="cat" to={"/admin/categories"}>
             Categories
           </Link>
         </li>
 
         <li>
+        <i className="fa fa-list"></i>
           <Link className="cat" to={"/admin/souscategories"}>
             Sous Categories
           </Link>
         </li>
        
         <li>
+          <i className="fa fa-th-list"></i>
           <Link className="cat" to={"/admin/products"}>
             Produits
           </Link>
         </li>
         <li>
-          <i className="fa fa-list"></i>
+          <i className="fa fa-shopping-cart"></i>
           <Link className="cat" to={"/admin/commande"}>
             Commandes
           </Link>

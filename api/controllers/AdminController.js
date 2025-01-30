@@ -136,10 +136,13 @@ const removeSousCategory = async (req, res) => {
 
 
 const addProduct = async (req, res) => {
-  const { SousCategoryId, name, price, desc, color, stock, size } = req.body;
+  const { name, price, desc, SousCategoryId, color, stock, size } = req.body;
+
+  // console.log(SousCategoryId);
+  
 
   let files = req.files.files;
-  console.log(files)
+  // console.log(files)
 
   let data = {
     name,
@@ -178,8 +181,10 @@ const addProduct = async (req, res) => {
     await product.save();
 
     return res.status(200).json({ message: "Created", product });
+
   } catch (error) {
-   
+    console.log(error);
+    
     return res.status(500).json(error);
   }
 };
