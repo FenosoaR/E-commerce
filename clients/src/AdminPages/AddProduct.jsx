@@ -31,6 +31,9 @@ export default function AddProduct() {
     [state]
   );
 
+  console.log(state);
+  
+
   function fileChange(e) {
     setImages(e.target.files);
   }
@@ -43,24 +46,41 @@ export default function AddProduct() {
 
         let htmlCategories = categories.map((value, index) => {
           return (
-            <div key={value.id}>
-              <li>{value.name}</li>
+            // <div key={value.id}>
+            //   <li>{value.name}</li>
+            //   {value.SousCategories.map((souscategory) => (
+            //     <div key={souscategory.id}>
+            //       <input
+            //         type="checkbox"
+            //         name="SousCategoryId"
+            //         value={souscategory.id}
+            //         className="check-input"
+            //         id={`souscategory-${souscategory.id}`}
+            //         onClick={handleChange}
+            //       />
+            //       <label htmlFor={`souscategory-${souscategory.id}`}>
+            //         {souscategory.name}
+            //       </label>
+            //     </div>
+            //   ))}
+            // </div>
+            <>
+           <select
+              name="SousCategoryId"
+              key={value.id}
+              className="select"
+              onChange={handleChange} // Ajout de l'événement onChange
+            >
+              <option value="">{value.name}</option>
               {value.SousCategories.map((souscategory) => (
-                <div key={souscategory.id}>
-                  <input
-                    type="checkbox"
-                    name="SousCategoryId"
-                    value={souscategory.id}
-                    className="check-input"
-                    id={`souscategory-${souscategory.id}`}
-                    onClick={handleChange}
-                  />
-                  <label htmlFor={`souscategory-${souscategory.id}`}>
-                    {souscategory.name}
-                  </label>
-                </div>
+                <option value={souscategory.id} key={souscategory.id}>
+                  {souscategory.name}
+                </option>
               ))}
-            </div>
+            </select>
+           </>
+          
+           
           );
         });
         setSelectCategory(htmlCategories);
@@ -111,6 +131,10 @@ export default function AddProduct() {
                 <div className="row">
                   <div className="col-lg-11">
                   <form action="" onSubmit={handlesubmit}>
+                   <div className="mb-3">
+                    <label htmlFor="">Categorie : </label><br />
+                    {selectCategory}
+                    </div>
                     <div className="mb-3">
                       <label htmlFor="name">Produit : </label>
                       <input
@@ -182,7 +206,6 @@ export default function AddProduct() {
                         onChange={handleChange}
                       />
                     </div>
-                    <div className="mb-3">{selectCategory}</div>
                     <div className="mb-3">
                       <button type="submit" className="form-control btn btn-primary bg-color">
                         Ajouter{" "}

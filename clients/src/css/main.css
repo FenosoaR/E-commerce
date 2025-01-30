@@ -400,3 +400,9 @@ background-color: rgb(242, 242, 242) !important;
     color: white;
 }
 
+.select{
+    margin-right: 20px;
+    padding: 5px;
+    width: 120px;
+    margin-top: 10px;
+}
