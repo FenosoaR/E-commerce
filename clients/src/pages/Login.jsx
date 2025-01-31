@@ -31,7 +31,7 @@ export default function Login() {
           localStorage.setItem("ssid", token);
           localStorage.setItem("userId", user.id);
           localStorage.setItem("username", user.username);
-          navigate("/admin")
+          navigate("/admin/dashboard")
         }else{
           localStorage.setItem("ssid", token);
             localStorage.setItem("userId", user.id);

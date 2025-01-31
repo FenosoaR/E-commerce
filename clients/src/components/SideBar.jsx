@@ -12,7 +12,7 @@ export default function SideBar() {
         <hr />
         <li>
           <i className="fa fa-dashboard"></i>
-          <Link className="cat" to={"/admin"}>
+          <Link className="cat" to={"/admin/dashboard"}>
             Dashboard
           </Link>
         </li>
