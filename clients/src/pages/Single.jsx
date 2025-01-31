@@ -87,7 +87,8 @@ export default function Single() {
 
   if (ok) {
     ok.addEventListener("click", function (e) {
-      popUp.style.display = "none";
+      // popUp.style.display = "none";
+      navigate('/panier')
     });
   }
 
