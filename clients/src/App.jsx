@@ -3,7 +3,6 @@ import "./css/main.css";
 import "./font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./js/main.js";
-import Admin from "./AdminPages/Admin";
 import ProductByCategory from "./AdminPages/ProductByCategory";
 import AddCategory from "./AdminPages/AddCategory";
 import AddProduct from "./AdminPages/AddProduct";
@@ -23,6 +22,7 @@ import SearchResult from "./pages/SearchResult";
 import Categories from "./AdminPages/Categories.jsx";
 import Products from "./AdminPages/Products.jsx";
 import SousCategories from "./AdminPages/SousCategories.jsx";
+import Dashboard from "./AdminPages/Dashboard.jsx";
 
 export default function App() {
   const UserId = localStorage.getItem("userId");
@@ -41,7 +41,7 @@ export default function App() {
       socket.on("new_commande", (client) => {
         console.log("okokokok");
 
-        notification.style.color = "red";
+        notification.style.backgroundColor = "red";
 
         const span = document.createElement("span");
 
@@ -54,7 +54,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/admin" element={<Admin />}></Route>
+        <Route path="/admin/dashboard" element={<Dashboard />}></Route>
         <Route
           path="/admin/productByCategory/:SousCategoryId"
           element={<ProductByCategory />}

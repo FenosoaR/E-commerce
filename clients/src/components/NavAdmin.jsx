@@ -54,7 +54,7 @@ export default function NavAdmin() {
   return (
       <div className="col-lg-12 g-0 nav-admin">
         {affichage}
-        <i className="fa fa-bell-o notification" onClick={clickBell}></i>
+        <i className="fa fa-bell-o notification" onClick={clickBell} style={{color : "black"}}></i>
         <div className="notif">
           {notif.map((value, index) => (
             <div key={index} className='notif-commande'>
