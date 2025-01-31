@@ -59,9 +59,6 @@ export default function Single() {
     });
   }
 
-  const popUp = document.querySelector(".pop-up");
-  const ok = document.getElementById("ok");
-
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -82,15 +79,11 @@ export default function Single() {
     stockagePanier.push(panier);
     localStorage.setItem("panier", JSON.stringify(stockagePanier));
 
-    popUp.style.display = "block";
+    navigate('/panier')
+
   }
 
-  if (ok) {
-    ok.addEventListener("click", function (e) {
-      // popUp.style.display = "none";
-      navigate('/panier')
-    });
-  }
+ 
 
   //verifiena ilay index anle sary
   // si iindex anle image mipoitra mitovy amle sary farany :
@@ -202,13 +195,6 @@ export default function Single() {
                   </button>
                 </div>
               </form>
-            </div>
-
-            <div className="pop-up">
-              <h2>{product.name}</h2>
-              <span>est ajouté au panier</span>
-              <br />
-              <button id="ok">OK</button>
             </div>
           </div>
         </div>
