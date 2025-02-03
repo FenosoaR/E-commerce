@@ -17,6 +17,10 @@ module.exports = (sequelize , datatype) =>{
             type:datatype.STRING,
             allowNull:false
         },
+        telephone :{
+            type:datatype.STRING,
+            allowNull:false
+        },
         type : {
             type:datatype.STRING,
             defaultValue : 'Client'
