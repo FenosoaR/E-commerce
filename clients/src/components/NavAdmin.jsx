@@ -3,17 +3,17 @@ import { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function NavAdmin() {
-  const token = localStorage.getItem("ssid");
-  const username = localStorage.getItem("username");
+  const token = sessionStorage.getItem("ssid");
+  const username = sessionStorage.getItem("username");
   const [affichage, setAffichage] = useState();
   const [notif, setNotif] = useState([]);
   let navigate = useNavigate();
 
   const logout = useCallback(() => {
    
-        localStorage.removeItem("ssid");
-        localStorage.removeItem("username");
-        localStorage.removeItem("userId");
+        sessionStorage.removeItem("ssid");
+        sessionStorage.removeItem("username");
+        sessionStorage.removeItem("userId");
         navigate("/login");
      
   }, [navigate]);

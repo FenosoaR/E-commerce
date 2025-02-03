@@ -2,14 +2,14 @@ import { Link, useNavigate } from "react-router-dom";
 import Search from "./Search";
 
 export default function Navbar() {
-  const token = localStorage.getItem("ssid");
-  const username = localStorage.getItem("username");
+  const token = sessionStorage.getItem("ssid");
+  const username = sessionStorage.getItem("username");
   let navigate = useNavigate();
 
   const logout = (e) => {
-    localStorage.removeItem("ssid");
-    localStorage.removeItem("username");
-    localStorage.removeItem("userId");
+    sessionStorage.removeItem("ssid");
+    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("userId");
     localStorage.removeItem("panier");
     navigate("/");
   };

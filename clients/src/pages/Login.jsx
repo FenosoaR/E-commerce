@@ -28,14 +28,23 @@ export default function Login() {
         let token = res.data.jwToken;
        
         if(user.type === "Admin"){
-          localStorage.setItem("ssid", token);
-          localStorage.setItem("userId", user.id);
-          localStorage.setItem("username", user.username);
+          // localStorage.setItem("ssid", token);
+          // localStorage.setItem("userId", user.id);
+          // localStorage.setItem("username", user.username);
+
+          sessionStorage.setItem('ssid', token);
+          sessionStorage.setItem('userId', user.id);
+          sessionStorage.setItem('username', user.username);
+
           navigate("/admin/dashboard")
         }else{
-          localStorage.setItem("ssid", token);
-            localStorage.setItem("userId", user.id);
-            localStorage.setItem("username", user.username);
+          // localStorage.setItem("ssid", token);
+          //   localStorage.setItem("userId", user.id);
+          //   localStorage.setItem("username", user.username);
+
+            sessionStorage.setItem('ssid', token);
+            sessionStorage.setItem('userId', user.id);
+            sessionStorage.setItem('username', user.username);
           navigate("/")
         }
       })
