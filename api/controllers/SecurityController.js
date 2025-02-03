@@ -3,7 +3,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const register = async (req, res) => {
-  const { username, password, confirmation, email } = req.body;
+  const { username, password, confirmation, email ,telephone} = req.body;
+  
 
   try {
     const data = await User.findOne({ where: { email } });
@@ -25,12 +26,16 @@ const register = async (req, res) => {
       username,
       password: hashedPassword,
       email,
+      telephone
     });
 
     await newUser.save();
 
     return res.status(200).json({ message: "Created", newUser });
+
   } catch (error) {
+    console.log(error);
+    
     return res.status(500).json(error);
   }
 };

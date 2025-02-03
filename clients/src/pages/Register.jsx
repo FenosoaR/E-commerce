@@ -10,6 +10,7 @@ export default function Register() {
     password: "",
     confirmation: "",
     email: "",
+    telephone : "",
   };
 
   const [state, setState] = useState(init);
@@ -66,6 +67,19 @@ export default function Register() {
                   className="form-control"
                   onChange={handleChange}
                   placeholder="Entrer votre nom d'utlisateur"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="telephone" style={{ marginBottom: "10px" }}>
+                  Telephone
+                </label>
+                <input
+                  type="text"
+                  name="telephone"
+                  id="telephone"
+                  className="form-control"
+                  onChange={handleChange}
+                  placeholder="Entrer votre telephone"
                 />
               </div>
               <div className="mb-3">
